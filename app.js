@@ -1,5 +1,5 @@
 //console.log all the sample data along with filling the dropdown button with ids
-d3.json("data/samples.json").then(function(data){
+d3.json("samples.json").then(function(data){
 
     function buttonFill(){
 
@@ -18,7 +18,7 @@ function optionChanged(selectedOption) {
     //create bar chart from samples array in samples.json
 
     function barGraph(){
-        d3.json("data/samples.json").then(function(data) {
+        d3.json("samples.json").then(function(data) {
     
             let barArray = data.samples.find(sample => sample.id === selectedOption);
 
@@ -50,7 +50,7 @@ function optionChanged(selectedOption) {
 
     function bubbleChart(){
 
-        d3.json("data/samples.json").then(function(data) {
+        d3.json("samples.json").then(function(data) {
     
             let bubbleArray = data.samples.find(sample => sample.id === selectedOption);
             let xData = bubbleArray.otu_ids;
@@ -86,7 +86,7 @@ function optionChanged(selectedOption) {
 
     function demographics() {
 
-        d3.json("data/samples.json").then(function(data) {
+        d3.json("samples.json").then(function(data) {
 
           let demographicObject = data.metadata.find(meta => meta.id == selectedOption);
           
